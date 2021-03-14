@@ -1,24 +1,24 @@
 # SQL Style Guide
 
-## Guiding Principles
+## Guiding principles
 
-### Version Control First
+### Version control first
 
 Many of the choices we've made were made in order to make reviewing pull requests easier.
 
 With this in mind, formatting changes to existing files should be made in separate commits and pull requests than changes of substance.
 
-### Overlapping Styles
+### Overlapping styles
 
 When possible and where it makes sense we try to align style recommendations across languages. You will find some overlapping styles across SQL and Python which is very intentional. Habits are hard to break, so we're leveraging that in our style choices.
 
-### Comment Intentions
+### Comment intentions
 
 Use rigorous comments to let future readers know what you were trying to accomplish. Explain your goal and intent of conditions. Sometimes it might makes sense to include anecdotes about the data being referenced but only in addition to what you were trying to do. In theory the person reading the query later will have some domain knowledge about the underlying data structures (or can do some sleuthing create the necessary understanding). But if they don't have access to you (or your notes) they won't be able to recreate why you excluded or included something.
 
 ## Casing
 
-### Uppercase Keywords
+### Uppercase keywords
 
 - Clauses: `SELECT`, `FROM`, `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY`, `LIMIT`, `OFFSET`
 - Functions such as: `SUM`, `COUNT`, `DATE_SUB`, `IF`
@@ -27,18 +27,18 @@ Use rigorous comments to let future readers know what you were trying to accompl
 
 These are some examples but the overall point is to uppercase words that are performing some functionality.
 
-### Snake Case For Everything Else
+### Snake case for everything else
 
 - Variables: `@my_variable`
 - Column Aliases: `AS total_amount`
 
 ## Spacing
 
-### Spaces Around Operators
+### Spaces around operators
 
 - Use a single space on both sides of operators such as: `-`, `+`, `*`, `=`, `<`, `>`, `<=`, `>=`, `<=>`, `!=`
 
-### A Space After Commas
+### A space after commas
 
 Use a single space after non-line-ending commas. This increases readability.
 
@@ -46,11 +46,11 @@ Use a single space after non-line-ending commas. This increases readability.
 
 Use a soft tab of four spaces for each level of indentation.
 
-### One Indent After Each Clause Keyword
+### One indent after each clause keyword
 
 Increase the indent level on a new line after each major clause keyword: `SELECT`, `FROM`, `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY`, `LIMIT`, `OFFSET`. This makes it very easy to visually scan for the next section of the query.
 
-### Increase Indent for Secondary Conditions in Joins
+### Increase indent for secondary conditions in joins
 
 Most joins only have one condition in the `ON` clause. When there are multiple conditions, increase the indent to make this visually apparent.
 
@@ -63,7 +63,7 @@ Example:
         AND c.deleted = 0
 ```
 
-### Increase Indent Inside of Parenthetical Statement On a Newline
+### Increase indent inside of parenthetical statement on a newline
 
 Example:
 
@@ -77,9 +77,9 @@ Example:
     ON ...
 ```
 
-## Line Breaks
+## Line breaks
 
-### Between Each Field In SELECT Clause
+### Between each field in SELECT clause
 
 Each field should begin on a new line. Sometimes it makes sense to wrap the field onto multiple lines when it exceeds max line length and contains obvious points at which to start a new line.
 
@@ -87,15 +87,15 @@ Each field should begin on a new line. Sometimes it makes sense to wrap the fiel
 
 Start ON statements on a new line after the JOIN statement for visual clarity. It makes it easier to see how the joined table is being aliased and it makes it easier to see how the ON statement is working. This also allows for a comment line between these two when the ON statement is confusing.
 
-### Between Each Condition In WHERE Clause
+### Between each condition in WHERE clause
 
 Each condition should start on a new line. Sometimes if an exclusion for a query is intuitively one exclusion but requires two conditions that make less sense when separated you can include them on one line if they are both short, but you should avoid this.
 
-### Between Each Portion of GROUP BY, HAVING, and ORDER BY
+### Between each portion of GROUP BY, HAVING, and ORDER BY
 
 At this point I've decided to start new ideas on new lines and this should be applied to these sections out of consistency and visual clarity.
 
-### After Opening Parenthetical Containing Long Statement
+### After opening parenthetical containing long statement
 
 Start a new line (and increase indent) after an opening parenthetical statement that will exceed max line length. Notable examples of this:
 
@@ -105,13 +105,13 @@ Start a new line (and increase indent) after an opening parenthetical statement 
 
 ## Comments
 
-### Types of Comments
+### Types of comments
 
 - `-- ` Use to comment out code that is not being used.
 - `# ` Use to include explanations about what the code is meant to do.
 - `/*  */` Use for multi-line explanations in advance of the code. Avoid using in the middle of a query.
 
-### Comment For All WHERE Clause Conditions
+### Comment for all WHERE clause conditions
 
 Every condition in your WHERE clause is important. There are two things that you should make sure and explain about each of your WHERE conditions:
 
@@ -154,12 +154,12 @@ OFFSET
 
 You should alias your tables, even if there is only one referenced table in a query. This enables adding in joined tables after the fact without having to go back and make changes to existing code.
 
-### Use Table Acronym Where Possible
+### Use table acronym where possible
 
 Most of the time you should be able to use the acronym of the table name as the table alias.
 
-## Query Writing Best Practices
+## Query writing best practices
 
-### Avoid Hard Coded Date Ranges that May Change
+### Avoid hard coded date ranges that may change
 
 Instead use variables. This makes it clear when looking at the query that there is a date range that is relevant to the results.

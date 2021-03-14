@@ -2,9 +2,9 @@
 
 <!-- TODO: need to incorporate previous work version of this document -->
 
-## Guiding Principles
+## Guiding principles
 
-### Convention Over Creation
+### Convention over creation
 
 My intention with this style guide is to gather into one place all the answers
 to questions that I often ask myself about styling and formatting. So if
@@ -13,7 +13,7 @@ exceptions second.
 
 ## Linting
 
-### VSCode Plugins
+### VSCode plugins
 
 <!-- TODO: need to look into this and pick one of these once and for all -->
 
@@ -24,7 +24,7 @@ for my taste. Follow the [Google examples here](https://sphinxcontrib-napoleon.r
 
 Use triple double quotes to enclose docstrings.
 
-## Type Hinting
+## Type hinting
 
 While I love this in principle in practice I find that type hinting everything
 makes code less readable and less enjoyable to write, which leads to worse code
@@ -50,21 +50,21 @@ hints in a separate commit.
 There are at least four different possible quote styles in Python. Here are my
 notes about when to use each style.
 
-### Single Quotes
+### Single quotes
 
 - simple strings
 - bracket notation
 
-### Double Quotes
+### Double quotes
 
 - f-strings
 
-### Triple Single Quotes
+### Triple single quotes
 
 - multi-line strings
 - strings containing quotes
 
-### Triple Double Quotes
+### Triple double quotes
 
 - docstrings
 - multi-line f-strings
