@@ -149,7 +149,7 @@ There are at least four different possible quote styles in Python. Here are my n
 #### Triple single quotes
 
 - multi-line strings
-- strings containing quotes
+- strings containing single quotes
 
 #### Triple double quotes
 
